@@ -6,12 +6,13 @@
 #### Load the data. Plot a histogram showing the distribution of ages (2 points).
 Answer:
 
-![The distribution of ages: most patients are around 20~60 years old.](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
+!(https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
+The distribution of ages: most patients are around 20~60 years old.
 
-Do any of the patients share the same exact age? (2 points) 
+#### Do any of the patients share the same exact age? (2 points) 
 Answer:
 No.
-How do you know? (2 points).
+#### How do you know? (2 points).
 Answer:
 Use set() to eliminate duplicated elements, because a set cannot have duplicated elements. If it returns TRUE, it means that there is no duplicate in the age list,which means no patients share the same age. 
 
