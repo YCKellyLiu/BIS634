@@ -3,10 +3,10 @@
 ## Exercise 1 (30 points)
 
 ### 1) Examine the contents of hw2-patients.xml  Download hw2-patients.xmlin a text-editor to see its structure, but in brief, there are a handful of fields you can ignore for this exercise and then several <patient> entries, all contained inside <patients>. Each <patient> has several attributes that we will want, namely name, age, and gender. Some patients have other associated data (e.g. diagnoses), but we won't need that here.
-Load the data. Plot a histogram showing the distribution of ages (2 points).
+#### Load the data. Plot a histogram showing the distribution of ages (2 points).
 Answer:
-The distribution of ages: most patients are around 20~60 years old.
-![This is an image](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
+
+![The distribution of ages: most patients are around 20~60 years old.](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
 
 Do any of the patients share the same exact age? (2 points) 
 Answer:
