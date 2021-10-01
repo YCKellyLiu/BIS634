@@ -6,7 +6,7 @@
 #### Load the data. Plot a histogram showing the distribution of ages (2 points).
 Answer:
 
-!(https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
+![](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
 The distribution of ages: most patients are around 20~60 years old.
 
 #### Do any of the patients share the same exact age? (2 points) 
