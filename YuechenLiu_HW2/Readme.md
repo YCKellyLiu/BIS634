@@ -7,6 +7,7 @@
 Answer:
 
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/1.png )
+
 The distribution of ages: most patients are around 20~60 years old.
 
 #### Do any of the patients share the same exact age? (2 points) 
@@ -21,11 +22,11 @@ Answer: If there are multiple patients having the same age, we can still use bin
 
 ### 3）Plot the distribution of genders. (2 points).
 Answer:
-<img src="https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/2.png" style="zoom:120%;" />
- In particular, how did this provider encode gender? 
+![](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/2.png)
+ #### In particular, how did this provider encode gender? 
  Answer: 
  The provider uses string to encode gender.
- What categories did they use? (2 points)
+ #### What categories did they use? (2 points)
  Answer: 
 Three categories: 'female','male', and 'unknown'.
 
@@ -37,7 +38,7 @@ Sort the patients by age and store the result in a list. Zip age and name as tup
 Answer:
 To draw the secondary oldest patient, we need find the oldest patient first, which needs O(n) time, and then remove this patient(tuple) from the zip_list(age and name), which is O(1) time; and now use the function to find the oldest patient in the new zip_list,which needs O(n) time. The total time consums will be O(n)+O(1)+O(n)=O(n)
 
-Discuss when it might be advantageous to sort and when it is better to just use the O(n) solution. (2 points).
+#### Discuss when it might be advantageous to sort and when it is better to just use the O(n) solution. (2 points).
 Answer:
 Advantage
 Sort: O(n log n) time: when you have to find different elements in a list for many times, you only cost nlogn + n time; sort the list first will be great.
@@ -56,7 +57,7 @@ There are 150,471 patients who are at least 41.5 years old.
 ### 8) Generalizing the above, write a function that in O(log n) time returns the number of patients who are at least low_age years old but are strictly less than high_age years old. (2 points) 
 Firstly I use bineray search, but because the question asks "strictly less than high_age years old", I change "while left <= right" to "while left < right". Then I write another function to calculate how many patients in the age range. 
 
-Test this function (show your tests) and convince me that this function works. (2 points). (A suggestion: sometimes when you're writing high efficiency algorithms, it helps to make a slower, more obviously correct implementation to compare with for your tests. Be sure your function works both for ages that are and are not in the dataset.)
+#### Test this function (show your tests) and convince me that this function works. (2 points). (A suggestion: sometimes when you're writing high efficiency algorithms, it helps to make a slower, more obviously correct implementation to compare with for your tests. Be sure your function works both for ages that are and are not in the dataset.)
 Answer:
 I use 22 years old and 66 years old to test the function, and I get 184,198 patients in this age range.
 To prove this function works, I use for loop to count how many patients in the age range; if the bisection function works, the result will be the same. The for loop function gives the same answer, 184,198 patients. Besides, I also check the time of using these two functions seperately. The time of using bisection is 0.0031239986419677734 seconds, and the time of using for loop is 0.5042462348937988 seconds. Clearly, bisection is much faster. 
@@ -65,7 +66,7 @@ To prove this function works, I use for loop to count how many patients in the a
 Answer:
 Firstly, I zip age list and sex list to get patient2, which is a list of tuples. Then I create the function to get both numbers of males and total patients in a age range by using bisection.  
 
-Test it (show your tests) and justify that your algorithm works. (2 points)
+#### Test it (show your tests) and justify that your algorithm works. (2 points)
 Answer:
 I use age range 22~66 years old to test the function, and the result is: The total number of patients betweeen 22 years old and 66 years old is 184,198 AND the number of males in the age range is 90,378. Since "the total number of patients betweeen 22 years old and 66 years old is 184,198" has been proved from 8) question, I only test the number of males by using for loop. I use for loop to count how many males in the age range; if the bisection function works, the result will be the same. I create a list that stores all the male patients.
 By using the for loop function (same function for_loop_test), I get the same result as using bisection, 90,378 males.
@@ -85,10 +86,10 @@ Aha! You exclaim.
 Explain what went wrong (6 points)
 Remember, your friend has to present soon, so keep your answers concise but thorough.
 
-Answer: 
+#### Answer: 
 Python is different with other language when using memory.
 In the following pitcure, we can see that Python store 100 int numbers using 904 Bytes, but C language only uses 400 Bytes.
-<img src="https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/3.png" zoom:120%;" />
+![](https://github.com/YCKellyLiu/BIS634/blob/main/YuechenLiu_HW2/3.png)
 When looping the 500 million float numbers in the file, it will need 4 GB (since the data is high-precision in this file, one float needs 8 Bytes; 8 Bytes* 500million = 4 GB). Besides, Python has a fair amount of per-object overhead (object header, allocation alignment, etc.)，so Python needs extra memory to describe the data structure. 
 Hence, the total memory using is excess. 
 
