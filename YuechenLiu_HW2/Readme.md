@@ -64,12 +64,19 @@ To prove this function works, I use for loop to count how many patients in the a
 
 ### 9) Modify the above, including possibly the data structure you're using, to provide a function that returns both the total number of patients in an age range AND the number of males in the age range, all in O(log n) time as measured after any initial data setup. (2 points).
 Answer:
-Firstly, I zip age list and sex list to get patient2, which is a list of tuples. Then I create the function to get both numbers of males and total patients in a age range by using bisection.  
+Firstly, I zip age list and sex list to get patient2, which is a list of tuples. Then I change my bisection function a little bit, since I create a list of tuples for male this time. The new bisection function is called bisection2. Finally, I create the function to get both numbers of males and total patients in a age range by using bisection and bisection2.
 
 #### Test it (show your tests) and justify that your algorithm works. (2 points)
 Answer:
 I use age range 22~66 years old to test the function, and the result is: The total number of patients betweeen 22 years old and 66 years old is 184,198 AND the number of males in the age range is 90,378. Since "the total number of patients betweeen 22 years old and 66 years old is 184,198" has been proved from 8) question, I only test the number of males by using for loop. I use for loop to count how many males in the age range; if the bisection function works, the result will be the same. I create a list that stores all the male patients.
 By using the for loop function (same function for_loop_test), I get the same result as using bisection, 90,378 males.
+
+## Exercise 2 (25 points)
+### Download and uncompress the latest Human Reference Genome(GRCh38.p13) from https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.28_GRCh38.p13/GCA_000001405.28_GRCh38.p13_genomic.fna.gz (Links to an external site.)The above should create the file GCA_000001405.28_GRCh38.p13_genomic.fna. This is a FASTA file a little over 3 GB in size, representing the about 3 billion bases in the human genome.(The Human Reference Genome is a product of the Genome Reference Consortium. It is a composite sequence representing no individual human but primarily derived from 11 individual humans. Other projects are trying to characterize the diversity possible across the species.)
+
+### 1) Write code to loop through all 15-mers, subsequences of 15 bases within chromosome 2 (CM000664.2).  (5 points)
+Answer:
+
 
 
 
