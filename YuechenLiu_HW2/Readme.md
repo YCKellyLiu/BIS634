@@ -145,8 +145,7 @@ Fatalities: Number of fatalities
 
 ### 3)Are the key variables explicitly specified or are they things you would have to derive (e.g. by inferring from text)?
 Answer:
-Yes. The key variables(Illness,hospitalizations, fatalities,etc.)are clearly specified, but the researcher has to do statistically 
-analysis based on those.
+Yes. The key variables(Illness,hospitalizations, fatalities,etc.)are clearly specified, but the researcher has to do statistically analysis based on those, such as using linear regression to test the relationship between mortality/morbidity and different species.
 
 ### 4) Are any of the variables exactly derivable from other variables? (i.e. are any of them redundant?)
 Answer:
@@ -154,7 +153,7 @@ The original data set has no redundant.
 
 ### 5)Are there any variables that could in principle be statistically predicted from other variables? 
 Answer:
-Mortality rate, Morbidity rate and so on.
+Mortality rate: may need Fatalities,Hospitalizations, and Illness; Morbidity rate: may need Illness,Hospitalizations; the relationship between mortality/morbidity and different species(which toxic substance causing the incontamination most)
 
 ### 6)How many rows/data points are there? 
 Answer:
