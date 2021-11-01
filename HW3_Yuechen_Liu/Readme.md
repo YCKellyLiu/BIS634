@@ -78,7 +78,7 @@ But for dimension of PC1 vs PC2, there are many overlaps, and the variance is no
 ### Now look at the distribution with the LDA projection. Note that if you have n categories (presumably 2 or maybe 3 for you), LDA will give at most n-1 reduced dimensions... so graphically show the LDA projection results in the way that you feel best captures the distribution. Comment on your choice, things you didn't chose and why, and any other differences about what you saw with PCA vs LDA.
 Answer:
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/ld0_ld1.png)
-For the graph we can see that LDA is to gather the subgroup and maximizes the separability between different groups. As a result, we can see that the data of Cancer is more concentrated together; the data of Alzheimer is more concnetrated together; but two clusters are separate. However, PCA is finding the maximal variance of data, so in the graphs of PCA, we can see many overlaps. I will choose different analysis ways based on what I need for my research. 
+From the graph we can see that LDA is to gather the subgroup and maximizes the separability between different groups. As a result, we can see that the data of Cancer is more concentrated together; the data of Alzheimer is more concnetrated together; but two clusters are separate, and there is a data point, 'BOTH", which is even more far away. However, PCA is finding the maximal variance of data, so in the graphs of PCA, we can see many overlaps. I will choose different analysis ways based on what I need for my research. 
 
 ## Exercise 4 
 ### Describe in words how you would parallelize this algorithm to work with two processes.
