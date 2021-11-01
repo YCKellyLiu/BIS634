@@ -40,15 +40,15 @@ I create function called mesh_count(disease) to count how many MeSH headings(ter
 
 ### Provide a graphic illustrating their relative frequency. 
 Answer: 
-![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/mesh_A.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/top10_A.png)
 
 ### What are the 10 most common MeSH terms for the cancer papers whose metadata you found in Exercise 1? 
 Answer:
-I use mesh_count(disease) and first_ten_items(disease) to get the first ten common MeSH terms for Cancer papers. The top ten are Humans, Female, Middle Aged, Male, Aged, Adult, Animals, Neoplasms, Retrospective Studies, aged 80 and over.
+I use mesh_count(disease) and first_ten_items(disease) to get the first ten common MeSH terms for Cancer papers. The top ten are Humans, Female, Male, Middle Aged, Aged, Adult, Animals, Retrospective Studies, Neoplasms, Treatment Outcome.
 
 ### Provide a graphic illustrating their relative frequency.
 Answer:
-![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/mesh_C.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/top10_C.png)
 
 ### Make a labeled table with rows for each of the top 5 MeSH terms from the Alzheimer's query and columns for each of the top 5 MeSH terms from the cancer query. For the values in the table, provide the count of papers (combined, from both sets) having both the matching MeSH terms.
 Answer:
