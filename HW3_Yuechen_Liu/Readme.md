@@ -92,18 +92,17 @@ Answer: For validate the result, we can use both merge sort and parallel merging
 ## Exercise 5
 ### Do data exploration on the dataset you identified in exercise 4 in the last homework, and present a representative set of figures that gives insight into the data. Comment on the insights gained.
 Answer:
-1. Which month does foodborne tend to occur the most? 
+#### 1. Which month does foodborne tend to occur the most? 
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/month.png)
-
 As the graph showing, foodborne tends to occur most in May,June,and December.
-2. Has foodborne disease outbreaks gotten worse over the years? 
+
+#### 2. Has foodborne disease outbreaks gotten worse over the years? 
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/year_b.png)
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/year_l.png)
-
 As the graph showing, the trend of foodborne illnesses has decreased overall since 1998. There are some significant drops, one is from 2004 - 2005, the other is from 2008-2009, but now seems to be steady around 800 - 900 cases per year. The data can be concluded that foodborne diseases are occurring less frequently by years.  
-3. Which state of the US do they appear the most frequently?
-![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/state.png)
 
+#### 3. Which state of the US do they appear the most frequently?
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/state.png)
 Clearly, California and Florida have extreamly high rate of foodborne illnesses. The possible reasons could be related to their population rate during the years of 1998-2015. An exceptional circumstance would be the outbreak of Salmonella Infections linked to Peanut Butter: at least 36 people across 17 states have been affected by a salmonella outbreak between May 9 and July 27, 2008 - 2009. Majority of peanut butter was sent to California and Ohio, according to 
 https://www.healthline.com/health-news/salmonella-outbreak-in-17-states-linked-to-italian-meats-what-to-know#:~:text=At%20least%2036%20people%20across,abdominal%20pain%2C%20and%20usually%20diarrhea.
 
