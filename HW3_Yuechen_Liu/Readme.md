@@ -63,12 +63,22 @@ I think the table has limitations to see the relationship among MeSH terms. The 
 ## Exercise 3
 ### In particular, for each paper identified from exercise 1, compute the SPECTER embedding (a 768-dimensional vector). Keep track of which papers came from searching for Alzheimers, which came from searching for cancer. 
 Answer:
+Firstly, I find the index of overlap paper, which is 885; then, I set the query of the overlap paper as 'BOTH'. I utilize SPECTER model to process my dictionary of papers, and as we can see from the below graph:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/a_c.png)
+The overlap paper have index of 885; from index 0-884 and 886-999 are Cancer, and 1000-1998 are Alzheimers, based on the fact that there are total 2000 papers, 1000 for Cancer, 1000 for Alzheimers. 
 
+### Plot 2D scatter plots for PC0 vs PC1, PC0 vs PC2, and PC1 vs PC2; color code these by the search query used (Alzheimers vs cancer). (3 points) Comment on the separation or lack thereof, and any take-aways from that. (2 points)
+#### PC0 vs PC1
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/pc0_pc1.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/pc0_pc2.png)
+According to the definition of PCA, we can see that the variation (seperation) is obviously, which means that it PCA holds the variance of data and we can access more information of the by looking at the dimension PC0 vs PC1. Same as to the dimension of PC0 vs PC2, we can see the great variance of data, which we can get information from it. 
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/pc1_pc2.png)
+But for dimension of PC1 vs PC2, there are many overlaps, and the variance is not obvious, thus we will get less information about the data from this dimension. According to https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python
 
-
-
-
-
+### Now look at the distribution with the LDA projection. Note that if you have n categories (presumably 2 or maybe 3 for you), LDA will give at most n-1 reduced dimensions... so graphically show the LDA projection results in the way that you feel best captures the distribution. Comment on your choice, things you didn't chose and why, and any other differences about what you saw with PCA vs LDA.
+Answer:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/ld0_ld1.png)
+For the graph we can see that LDA is to gather the subgroup and maximizes the separability between different groups. As a result, we can see that the data of Cancer is more concentrated together; the data of Alzheimer is more concnetrated together; but two clusters are separate. However, PCA is finding the maximal variance of data, so in the graphs of PCA, we can see many overlaps. I will choose different analysis ways based on what I need for my research. 
 
 ## Exercise 4 
 ### Describe in words how you would parallelize this algorithm to work with two processes.
