@@ -21,11 +21,11 @@ Answer:
 I use for loop to go through all child nodes, and if the child is None, the function will print"someone is missing abstract"; if it is not null, the function will add the information to the "abstract". I think the advantage may be in this way, the function can avoid possible attribute errors, so the function can process smoothly regardless the format of the abstract; the potential disadvantage may be it will cost more time to check if there is missing abstract. 
 
 ## Exercise 2 
-### Q2.1What fraction of the Alzheimer's papers have no MeSH terms? 
+### What fraction of the Alzheimer's papers have no MeSH terms? 
 Answer: 
 I create a function called mesh_fraction(disease) to calculate the fraction of the disease's papers having no MeSH terms. The function firstly conut the number of empty MeSH papers, and divided it by the total number of papers. When the disease is ALZHEIMERS, the result is 0.165, which means that there are 16.5% of Alzheimer's papers without MeSH terms. 
 
-### Q2.2 What fraction of the cancer papers have no MeSH terms? 
+### What fraction of the cancer papers have no MeSH terms? 
 Answer:
 The answer is 0.759, which means that there are 75.9% of Cancer's papers without MeSH terms.
 
