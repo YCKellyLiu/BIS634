@@ -14,11 +14,9 @@ I create a function called overlap(disease1,disease2); when input the two diseas
 ### Use the Entrez API via requests/urllib to pull the metadata for each such paper found above (both cancer and Alzheimers) (and save a JSON file storing each paper's title, abstract, MeSH terms (DescriptorName inside of MeshHeading), and the query that found it that is of the general form
 Answer:
 Citation: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/  https://docs.python.org/3/tutorial/errors.html
-<<<<<<< HEAD
+
 I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I save the json file called pb2000.json. This function works because I check the json file with 'find' to locate some specific content, such as the first, last, and middle papers by finding their IDs, and all papers show in a right format. 
-=======
-I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in the title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I saved the json file called pb2000.json.
->>>>>>> 91354aa5afec1d7231cc5fb0f1692fa655cfb178
+
 
 ### Some papers like 32008517 (Links to an external site.) have multiple AbstractText fields (e.g. when the abstract is structured). Be sure to store all parts. You could do this in many ways, from using a dictionary or a list or simply concatenating with a space in between. Discuss any pros or cons of your choice in your readme 
 Answer: 
