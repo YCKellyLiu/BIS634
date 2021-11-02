@@ -14,7 +14,7 @@ I create a function called overlap(disease1,disease2); when input the two diseas
 ### Use the Entrez API via requests/urllib to pull the metadata for each such paper found above (both cancer and Alzheimers) (and save a JSON file storing each paper's title, abstract, MeSH terms (DescriptorName inside of MeshHeading), and the query that found it that is of the general form
 Answer:
 Citation: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/  https://docs.python.org/3/tutorial/errors.html
-I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I save the json file called pmbi2000.json.
+I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I save the json file called pb2000.json. This function works because I check the json file with 'find' to locate some specific content, such as the first, last, and middle papers by finding their IDs, and all papers show in a right format. 
 
 ### Some papers like 32008517 (Links to an external site.) have multiple AbstractText fields (e.g. when the abstract is structured). Be sure to store all parts. You could do this in many ways, from using a dictionary or a list or simply concatenating with a space in between. Discuss any pros or cons of your choice in your readme 
 Answer: 
@@ -23,7 +23,7 @@ I use for loop to go through all child nodes, and if the child is None, the func
 ## Exercise 2 
 ### Q2.1What fraction of the Alzheimer's papers have no MeSH terms? 
 Answer: 
-I create a function called mesh_fraction(disease) to calculate the fraction of the disease's papers having no MeSH terms. The function firstly conut the number of empty MeSH papers, and divided it by the total number of papers. When the disease is ALZHEIMERS, the result is 0.165, which means that there are 16.5% of Alzheimer's papers without MeSH terms. 
+I create a function called mesh_fraction(disease) to calculate the fraction of the disease's papers having no MeSH terms. The function firstly conut the number of empty MeSH papers, and divided it by the total number of papers. When the disease is ALZHEIMERS, the result is 0.165, which means that there are 16.5% of Alzheimer's papers without MeSH terms. To be honest, I don't know how to prove my function works, so I checked the answer with classmates, and we got similar answers. 
 
 ### Q2.2 What fraction of the cancer papers have no MeSH terms? 
 Answer:
@@ -36,7 +36,7 @@ The two results are totally different. I think the one potential reason is that 
 ### What are the 10 most common MeSH terms for the Alzheimer's papers whose metadata you found in Exercise 1? 
 Answer:
 Citation: #https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
-I create function called mesh_count(disease) to count how many MeSH headings(terms) in each disease, and for Alzheimer, the function returns a list of MeSH terms with the count of each term. Then I create a function called first_ten_items(disease) to get the first ten common MeSH terms for Alzheimer papers. The top ten are: Humans, Alzheimer Disease, Male, Female, Aged, Animals, Amyloid beta-Peptides, Brain, Aged, 80 and over and Cognitive Dysfunction.
+I create function called mesh_count(disease) to count how many MeSH headings(terms) in each disease, and for Alzheimer, the function returns a list of MeSH terms with the count of each term. Then I create a function called first_ten_items(disease) to get the first ten common MeSH terms for Alzheimer papers. The top ten are: Humans, Alzheimer Disease, Male, Female, Aged, Animals, Amyloid beta-Peptides, Brain, Aged, 80 and over and Cognitive Dysfunction. I used the first function to test my second functions; I manually find the top terms in total MeSH terms based on my function mesh_count, and the result is correct. 
 
 ### Provide a graphic illustrating their relative frequency. 
 Answer: 
@@ -54,7 +54,7 @@ Answer:
 Answer:
 Citation: #https://towardsdatascience.com/how-to-easily-create-tables-in-python-2eaea447d8fd
 In order to get top 5 MeSH terms, I change the above function a little bit to create a new one called first_5(disease). Then, for the table, I first create a matrix, and for loop the count of top five Mesh Terms paper in to the matrix. Finally, I create a table based on the matrix. 
-![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/table.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW3_Yuechen_Liu/table.png) To test the funcation works, I compared the first five with first ten(from last question), and the result is the same. 
 
 ### Comment on any findings or limitations from the table and any ways you see to get a better understanding of how the various MeSH terms relate to each other.
 Answer:
