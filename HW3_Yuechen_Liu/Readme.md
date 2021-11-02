@@ -1,4 +1,4 @@
-# BIS634 Yuechen Liu HW2
+# BIS634 Yuechen Liu HW3
 
 ## Exercise 1 
 
@@ -14,24 +14,28 @@ I create a function called overlap(disease1,disease2); when input the two diseas
 ### Use the Entrez API via requests/urllib to pull the metadata for each such paper found above (both cancer and Alzheimers) (and save a JSON file storing each paper's title, abstract, MeSH terms (DescriptorName inside of MeshHeading), and the query that found it that is of the general form
 Answer:
 Citation: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/  https://docs.python.org/3/tutorial/errors.html
+<<<<<<< HEAD
 I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I save the json file called pb2000.json. This function works because I check the json file with 'find' to locate some specific content, such as the first, last, and middle papers by finding their IDs, and all papers show in a right format. 
+=======
+I create a function called get_info(disease1,disease2) in order to combine two dictionaries into one for better use in the future. I met problems when adding paper information into the json file, such as there is missing value in the title, so I use if & else to catch the issue to make sure that the json file can be finished. Finally, I saved the json file called pb2000.json.
+>>>>>>> 91354aa5afec1d7231cc5fb0f1692fa655cfb178
 
 ### Some papers like 32008517 (Links to an external site.) have multiple AbstractText fields (e.g. when the abstract is structured). Be sure to store all parts. You could do this in many ways, from using a dictionary or a list or simply concatenating with a space in between. Discuss any pros or cons of your choice in your readme 
 Answer: 
-I use for loop to go through all child nodes, and if the child is None, the function will print"someone is missing abstract"; if it is not null, the function will add it to the "abstract". i think the advantage may be in this way, the function can avoid possible attribute errors, so the function can process smoothly regardless the format of the abstract; the potential disadvantage may be it will cost more time to check if there is missing abstract. 
+I use for loop to go through all child nodes, and if the child is None, the function will print"someone is missing abstract"; if it is not null, the function will add the information to the "abstract". I think the advantage may be in this way, the function can avoid possible attribute errors, so the function can process smoothly regardless the format of the abstract; the potential disadvantage may be it will cost more time to check if there is missing abstract. 
 
 ## Exercise 2 
-### Q2.1What fraction of the Alzheimer's papers have no MeSH terms? 
+### What fraction of the Alzheimer's papers have no MeSH terms? 
 Answer: 
 I create a function called mesh_fraction(disease) to calculate the fraction of the disease's papers having no MeSH terms. The function firstly conut the number of empty MeSH papers, and divided it by the total number of papers. When the disease is ALZHEIMERS, the result is 0.165, which means that there are 16.5% of Alzheimer's papers without MeSH terms. To be honest, I don't know how to prove my function works, so I checked the answer with classmates, and we got similar answers. 
 
-### Q2.2 What fraction of the cancer papers have no MeSH terms? 
+### What fraction of the cancer papers have no MeSH terms? 
 Answer:
 The answer is 0.759, which means that there are 75.9% of Cancer's papers without MeSH terms.
 
 ### Comment on how the fractions compare. (1 point; i.e. if they're essentially the same, do you think that's a coincidence? If they're different, do you have any theories why?)
 Answer:
-The two results are totally different. I think the one potential reason is that because cancer is a really broad term, which it has many subterms such as breast cancer, stomach cancer, etc.. Compared with cancer, Alzheimer is a more narrow term, which maybe the missing MeSH terms percentage is fewer than Cancer. #https://www.definitivehc.com/resources/glossary/medical-subject-headings-mesh
+The two results are totally different. I think the one potential reason is that because cancer is a really broad term, which it has many subterms such as breast cancer, stomach cancer, etc.. Compared with cancer, Alzheimer is a more narrow term, which maybe the reason of the missing MeSH terms percentage of Alzheimer lower than Cancer. https://www.definitivehc.com/resources/glossary/medical-subject-headings-mesh
 
 ### What are the 10 most common MeSH terms for the Alzheimer's papers whose metadata you found in Exercise 1? 
 Answer:
