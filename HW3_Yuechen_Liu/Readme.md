@@ -18,7 +18,7 @@ I create a function called get_info(disease1,disease2) in order to combine two d
 
 ### Some papers like 32008517 (Links to an external site.) have multiple AbstractText fields (e.g. when the abstract is structured). Be sure to store all parts. You could do this in many ways, from using a dictionary or a list or simply concatenating with a space in between. Discuss any pros or cons of your choice in your readme 
 Answer: 
-I use for loop to go through all child nodes, and if the child is None, the function will print"someone is missing abstract"; if it is not null, the function will add it to the "abstract". i think the advantage may be in this way, the function can avoid possible attribute errors, so the function can process smoothly regardless the format of the abstract; the potential disadvantage may be it will cost more time to check if there is missing abstract. 
+I use for loop to go through all child nodes, and if the child is None, the function will print"someone is missing abstract"; if it is not null, the function will add the information to the "abstract". I think the advantage may be in this way, the function can avoid possible attribute errors, so the function can process smoothly regardless the format of the abstract; the potential disadvantage may be it will cost more time to check if there is missing abstract. 
 
 ## Exercise 2 
 ### Q2.1What fraction of the Alzheimer's papers have no MeSH terms? 
