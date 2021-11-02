@@ -1,4 +1,4 @@
-# BIS634 Yuechen Liu HW2
+# BIS634 Yuechen Liu HW3
 
 ## Exercise 1 
 
