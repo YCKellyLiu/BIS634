@@ -31,7 +31,7 @@ The answer is 0.759, which means that there are 75.9% of Cancer's papers without
 
 ### Comment on how the fractions compare. (1 point; i.e. if they're essentially the same, do you think that's a coincidence? If they're different, do you have any theories why?)
 Answer:
-The two results are totally different. I think the one potential reason is that because cancer is a really broad term, which it has many subterms such as breast cancer, stomach cancer, etc.. Compared with cancer, Alzheimer is a more narrow term, which maybe the missing MeSH terms percentage is fewer than Cancer. #https://www.definitivehc.com/resources/glossary/medical-subject-headings-mesh
+The two results are totally different. I think the one potential reason is that because cancer is a really broad term, which it has many subterms such as breast cancer, stomach cancer, etc.. Compared with cancer, Alzheimer is a more narrow term, which maybe the reason of the missing MeSH terms percentage of Alzheimer lower than Cancer. https://www.definitivehc.com/resources/glossary/medical-subject-headings-mesh
 
 ### What are the 10 most common MeSH terms for the Alzheimer's papers whose metadata you found in Exercise 1? 
 Answer:
