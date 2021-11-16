@@ -99,7 +99,13 @@ Website:
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/gap2-2.png)
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/gap2-3.png)
 
+I also used other two sequences to test the function.
+sequece 1: 'agcccagcgat'
+sequence 2: 'ttcaagctag'
 
+When  match=2, gap_penalty=2, mismatch_penalty=1 
+Mine:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/gap2-1.png)
 
 
 
