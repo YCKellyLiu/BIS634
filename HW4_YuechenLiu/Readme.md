@@ -100,10 +100,10 @@ Website:
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/gap2-3.png)
 
 I also used other two sequences to test the function.
-sequece 1: 'agcccagcgat'
-sequence 2: 'ttcaagctag'
+sequece 1: 'tgcatcgagaact'
+sequence 2: 'actagacctagcatcg'
 
-When  match=2, gap_penalty=2, mismatch_penalty=1 
+When  match=2, gap_penalty=2, mismatch_penalty=2 
 Mine:
 ![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/4-1.png)
 
