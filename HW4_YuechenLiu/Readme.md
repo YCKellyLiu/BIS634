@@ -105,7 +105,11 @@ sequence 2: 'ttcaagctag'
 
 When  match=2, gap_penalty=2, mismatch_penalty=1 
 Mine:
-![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/gap2-1.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/4-1.png)
+
+Website:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW4_YuechenLiu/4-2.png)
+
 
 
 
