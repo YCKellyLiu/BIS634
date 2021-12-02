@@ -1,0 +1,17 @@
+html { overflow-y: scroll; background: #ffffff  center; font-family: 'Lato', Verdana, Geneva, sans-serif; color: #444; font-weight: 400; }
+body { min-width: 1040px; }
+.left { float: left; }
+.right { float: right; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.center { text-align: center; }
+/* Graph image shadow */
+.shadow { box-shadow: 10px 10px 5px #888888; }
+/*.image-results { border: 4px solid gray; }*/
+.image-results { border: 0px solid #c0c0c0; }
+/* Image Map - no blue outline */
+img.map, map area { outline: none; }
+h1 { font-family: Georgia, "Times New Roman", Times, serif; margin: 12px auto .1em; font-size: 34px; font-weight: 700; text-transform: uppercase; border-bottom: medium double #6a93b1; width: 52%; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.75); }
+.btnRed { display: block; width: 100%; color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,.8); border-radius: 3px; background: #EC1000; font-family: 'lato', sans-serif; font-weight: 700; padding: .4em 0; border: 1px solid #d91b0e; box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 2px 0 rgba(0,0,0,.3); }
+.btnRed:hover, .btnRed:focus { background: #d91b0e; }
+.generate { width: 50%; margin: 0 auto 1em auto; }

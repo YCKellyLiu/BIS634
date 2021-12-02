@@ -1,0 +1,110 @@
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Exercise1</title>
+   <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename = 'style.css') }}">
+
+   <body class="center" >
+      <form >
+         <h1>Please enter a state name:</h1>
+         <p><input id="state_name" type = "text" name = "state_name" /></p>
+         <p><input id="submit" class="btnRed generate" type = "submit" value = "submit" onClick="fun(event)" /></p>
+      </form>
+      <div id="content" class="row center"><img class="map image-results" name="MapImage" src="{{ url_for('static', filename = 'map.png') }}" alt="United States map showing age-adjusted incidence rates by state." title="United States map showing age-adjusted incidence rates by state." width="1000" height="742" usemap="#MapImageLinks" hidefocus="true"><map name="MapImageLinks" id="ImgMap">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="712,566,774,566,774,546,712,546" title="Puerto Rico">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="247,422,258,343,324,350,318,420,276,416,273,419,255,417,253,423,247,422" title="New Mexico">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="181,386,186,376,191,371,187,360,189,344,195,346,200,333,253,342,242,422,219,418,196,405,179,394,183,390,181,386" title="Arizona">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="258,338,266,284,339,291,336,346,258,338" title="Colorado">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="139,285,150,246,209,259,193,341,185,341,184,353,139,285" title="Nevada">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="245,274,253,221,322,230,317,285,245,274" title=" Wyoming">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="97,254,105,233,145,245,135,286,183,359,186,370,177,381,178,390,149,386,148,375,138,361,115,348,117,340,107,319,110,310,105,305,110,302,110,293,107,289,103,291,98,276,100,262,97,254" title="California">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="200,329,214,260,242,265,240,280,261,283,254,338,200,329" title="Utah">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="565,344,572,335,579,337,593,330,598,315,603,314,611,299,623,303,622,311,630,313,635,321,632,326,637,331,642,331,565,344"  title="Virginia">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="280,421,322,424,328,358,359,360,358,387,363,391,395,402,419,399,431,404,432,426,438,439,436,453,435,457,429,460,426,456,423,457,419,461,422,465,410,473,398,473,385,495,389,513,369,506,364,489,341,455,327,452,321,455,314,464,301,454,297,440,280,421" title="Texas">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="238,487,284,488,318,507,367,545,363,572,340,579,312,535,236,508,238,487" title="Hawaii">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="74,546,118,420,205,431,256,557,138,542,74,546"  title="Alaska">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="674,294,690,302,680,317,680,312,677,307,669,302,674,294" title="District">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="107,217,126,175,131,176,132,184,137,188,173,190,192,195,195,198,184,213,185,220,178,248,105,228,107,217" title="Oregon">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="127,144,142,150,141,159,144,162,151,151,151,138,200,151,192,190,136,182,136,175,128,169,131,161,127,144" title="Washington">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="183,249,191,220,188,215,200,200,196,187,204,152,209,153,207,166,208,175,219,191,214,205,218,208,222,207,229,227,247,225,248,227,242,260,183,249" title="Idaho">
+         <area shape="POLY" coords="672,192,678,161,689,159,696,179,701,180,707,189,690,198,690,205,682,209,678,219,670,195,672,192" href="javascript:void(0);" onClick="fun(event)"
+              title="Maine">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="428,361,477,359,474,365,480,366,480,369,467,394,467,407,436,408,435,401,430,399,428,361" title="Arkansas">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="663,222,664,211,667,206,666,198,677,225,664,231,663,222" title="New Hampshire">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="640,291,647,302,643,302,640,291" title="Delaware">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="581,264,633,254,640,260,638,271,643,277,635,284,586,293,581,264" title="Pennsylvania">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="436,412,466,412,468,422,463,431,462,440,486,440,488,458,476,465,466,456,460,455,456,459,440,456,442,437,436,425,436,412" title="Louisiana">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="593,242,616,237,622,232,620,222,626,213,631,209,643,206,652,236,653,259,642,256,634,249,589,258,597,248,593,242" title="New York">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="566,321,582,298,594,297,597,304,607,297,600,310,595,310,589,327,583,331,576,332,566,321" title="West Virginia">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="405,256,458,255,461,265,471,275,469,279,462,282,463,289,459,294,413,295,405,265,405,256" title="Iowa">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY" coords="641,287,649,277,642,271,643,267,642,266,644,261,652,264,650,271,651,272,653,273,654,281,650,291,644,290,641,287"  title="New Jersey">
+         <area href="javascript:void(0);" onClick="fun(event)" shape="POLY"  coords="492,347,499,348,504,336,513,337,527,332,540,314,550,320,558,318,568,332,554,345,502,349,500,352,492,353,492,347"  title="Kentucky">
+         <area shape="RECT" coords="872,195,955,210" href="" alt="interval types">
+         <area shape="RECT" coords="15,630,130,644" href="https://nccd.cdc.gov/dcpc_Programs/index.aspx#/3" alt="State Cancer Registries may provide more current or more local data. Click here to go to a list of State Cancer Registries">
+         <area shape="RECT" coords="606,643,708,657" href="https://statecancerprofiles.cancer.gov/faq.html#differ" alt="Click here for more information about differences from the State Cancer Profiles web site and other statistics published.">
+         <area shape="RECT" coords="420,656,561,670" href="https://seer.cancer.gov/stdpopulations/stdpop.19ages.html" alt="Incidence Rates are age-adjusted to the 2000 US standard population by 5-year age groups. To get more information on the standard population, click here.">
+         <area shape="RECT" coords="48,682,196,696" href="https://seer.cancer.gov/popdata/" alt="Population Data File">
+         <area shape="RECT" coords="532,695,605,709" href="" alt="malignant.html">
+         <area shape="RECT" coords="27,708,116,722"  href="" alt="Data are not available">
+      </map></div>
+
+
+      <script type="text/javascript">
+         function fun(event){
+            var obj=event.srcElement;
+            var url = ""
+            if ((obj.tagName.toString()=="AREA") && (obj.shape.toString()=="POLY")) {
+               url = 'http://localhost:5000/info?state_name=' + obj.title.toString();
+               console.log('start===>XMLHttpRequest');
+               var xhr = new XMLHttpRequest();
+               xhr.responseType = "text";
+               xhr.open('GET', url);
+               xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;")
+               xhr.send();
+               xhr.onload = function (e) {
+                  console.log('onload。e====>' + JSON.stringify(e));
+               };
+               xhr.onreadystatechange = function (e) {
+                  console.log('onreadystatechange。e====>' + JSON.stringify(e));
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                     var xhrRes = xhr.responseText;
+                     alert(xhrRes);
+                  }
+               }
+            }
+            if ((obj.tagName.toString()=="INPUT") && (obj.id.toString()=="submit")){
+               var state_name = document.getElementById("state_name").value
+               url = 'http://localhost:5000/info?state_name=' + state_name;
+               console.log('start===>XMLHttpRequest');
+               var xhr = new XMLHttpRequest();
+               xhr.responseType = "text";
+               xhr.open('GET', url);
+               xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
+               xhr.send();
+               xhr.onload = function (e) {
+                  console.log('onload。e====>' + JSON.stringify(e));
+               };
+               xhr.onreadystatechange = function (e) {
+                  console.log('onreadystatechange。e====>' + JSON.stringify(e));
+                  if (xhr.readyState == 4) {
+                     if(xhr.status == 200){
+                        var xhrRes = xhr.responseText;
+                        alert(xhrRes);
+                     }
+                     if(xhr.status == 404){
+                        var xhrRes = xhr.responseText;
+                        document.write(xhrRes);
+                     }
+                  }
+               }
+            }
+
+         };
+         function display(content){
+            var p = document.getElementById('content');
+            p.innerHTML=content;
+         }
+      </script>
+
+   </body>
+</html>
