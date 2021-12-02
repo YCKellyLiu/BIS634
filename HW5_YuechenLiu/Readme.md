@@ -67,3 +67,44 @@ If I create a function and put actual time spend, n**2, and n in one graph:
 As we can see from the above graph, the actual running time lies between O (n**2) and O (n).
 
 ## Exercise 3 (50 points):
+Citation: https://github.com/diana12333/QuadtreeNN/blob/anewbranch/QuadTree_Report.pdf
+https://en.wikipedia.org/wiki/Quadtree
+https://cloud.tencent.com/developer/article/1487842 
+https://scipython.com/blog/quadtrees-2-implementation-in-python/ 
+https://jrtechs.net/data-science/implementing-a-quadtree-in-python
+
+### Normalize the seven quantitative columns to a mean of 0 and standard deviation 1. (3 points)
+Answer:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-1.png)
+
+### Plot this on a scatterplot, color-coding by type of rice. 
+Answer:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-2.png)
+
+### Comment on what the graph suggests about the effeciveness of using k-nearest neighbors on this 2-dimensional reduction of the data to predict the type of rice. (4 points)
+Answer:
+The PCA model is able to reduce the dimensionality of the data to 2. The gaussion distance of two samples seems to be small if they belong to the same class.
+
+### Implement a two-dimensional k-nearest neighbors classifier (in particular, do not use sklearn for k-nearest neighbors here): given a list of (x, y; class) data, store this data in a quad-tree (14 points). Given a new (x, y) point and a value of k (the number of nearest neighbors to examine), it should be able to identify the most common class within those k nearest neighbors (14 points). 
+Answer:
+
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-11.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-12.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-13.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-14.png)
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-15.png)
+
+### Using 5-fold cross-validation with your k-nearest neighbors implementation, give the confusion matrix for predicting the type of rice with k=1. (4 points) Repeat for k=5. (4 points)
+Answer: 
+When k = 1:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-3.png)
+
+When k = 5:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-4.png)
+
+### Provide a brief interpretation of what the confusion matrix results mean. (4 points)
+Answer:
+![](https://github.com/YCKellyLiu/BIS634/blob/main/HW5_YuechenLiu/Q3-5.png)
+According to confusion matrix definition, we can see the difference of results between when k = 1 and when k = 5. Citation: https://blog.csdn.net/vesper305/article/details/44927047
+
+Obviously, the overall true positive (Osmancik is correctly classified as Osmancik) and true negative (Cammeo is correctly classified as Cammeo) is higher in the results when k = 5 than in the results when k = 1; meanwhile, the overall false positive(Osmancik is wrongly classified as Cammeo) and false negative(Cammeo is wrongly classified as Osmancik) is lower in the results when k = 5 than in the results when k = 1. As a result, we can see that the consitency of knn when k=5 is better.
