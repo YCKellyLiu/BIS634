@@ -1,0 +1,142 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js" xmlns="http://www.w3.org/1999/html"></script>
+<script src = "/static/js/jquery-1.11.1.min.js"></script>
+
+<style>
+  .show:hover{background-color:blue}
+</style>
+<div class="card">
+  <div class="card-body">
+    <a href= "/Prediction" style="color:#000000">
+      <h2 class="card-title">Xgboost Prediction</h2></a>
+    <p class="card-text">Supervised training is performed using xgboost to predict the consumer spending level.
+      XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible
+      and portable. It implements machine learning algorithms under the Gradient Boosting framework.
+      XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science
+      problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI)
+      and can solve problems beyond billions of examples. <a class="show"> https://xgboost.readthedocs.io/en/stable/</a>
+    </p>
+    </br>
+    <p><strong>Our config: </strong> XGBRegressor(
+      objective ='reg:squarederror', colsample_bytree = 0.3, learning_rate = 0.1,
+      max_depth = 3, alpha = 10, n_estimators = 200)
+    </p>
+    <h3  class="card-title">Feature Importance Distribution</h3></a>
+    <img src="/static/img/fea_imps.png" class="card-img-bottom" alt="..." height = "333", width = "713">
+    <h3  class="card-title">Comparison of the predicted and true values of the model</h3></a>
+    <img src="/static/img/preds.png"  class="card-img-bottom" alt="..." height = "317", width = "618">
+    <h3 class="card-title">Error Distribution</h3></a>
+    <img src="/static/img/error.png" class="card-img-bottom" alt="..." height = "317", width = "627">
+  </div>
+</div>
+
+
+<!--  <div >-->
+<!--    <label id="Education" style="float: left">Education:</label>-->
+<!--    <label id="Marital_Status" style="float: left">Marital_Status:</label>-->
+<!--    <label id="Income" style="float: left">Income:</label>-->
+<!--    <label id="Recency" style="float: left">Recency:</label>-->
+<!--    <label id="Complain" style="float: left">Complain:</label>-->
+<!--    <label id="Age" style="float: left">Age:</label>-->
+<!--    <label id="Engaged_Days" style="float: left">Engaged_Days:</label>-->
+<!--    <label id="Kids" style="float: left">Kids:</label>-->
+<!--    <label id="TotalAcceptedCampaign" style="float: left">TotalAcceptedCampaign:</label>-->
+<!--    <label id="NumTotalPurchases" style="float: left">NumTotalPurchases:</label>-->
+<!--  </div>-->
+<h2 class="card-title">Expense Prediction</h2></a>
+<p><strong>Please input like:</strong>
+  Education :                   0.0(0:Graduate 1:Undergraduate);
+  Marital_Status:               1.0(0:Single 1:Relationship);
+  Income  :                 33812.0;
+  Recency    :                 86.0;
+  Complain   :                  0.0;
+  Age        :                 29.0;
+  Engaged_Days    :          1000.0;
+  Kids        :                 1.0;
+  TotalAcceptedCampaign  :      0.0;
+  NumTotalPurchases     :       8.0.
+</p>
+<div class="card" >
+  Education:<input id="Education" value="0" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Marital_Status:<input id="Marital_Status" value="1" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Income:<input id="Income" value="33812" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Recency:<input id="Recency" value="86" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Complain:<input id="Complain" value="0" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Age:<input id="Age" value="29" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Engaged_Days:<input id="Engaged_Days" value="1000" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  Kids:<input id="Kids" value="1" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  TotalAcceptedCampaign:<input id="TotalAcceptedCampaign" value="0" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  NumTotalPurchases:<input id="NumTotalPurchases" value="8" oninput="value=value.replace(/[^\d]/g,'')"></input>
+  <br>
+  <button id="confirm">Confirm to predict</button>
+  Result: <label id="Prediction_expense" style="width: 100px; border: blue 1px solid; text-align: center" > Result </label>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<style>
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(73, 95, 221);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  #myBtn:hover {
+    background-color: #555;
+  }
+</style>
+<script src = "/static/js/jquery-1.11.1.min.js"></script>
+<script>
+  // Education :                   0.0(0:Graduate 1:Undergraduate);
+  // Marital_Status:               1.0(0:Single 1:Relationship);
+  // Income  :                 33812.0;
+  // Recency    :                 86.0;
+  // Complain   :                  0.0;
+  // Age        :                 29.0;
+  // Engaged_Days    :          1000.0;
+  // Kids        :                 1.0;
+  // TotalAcceptedCampaign  :      0.0;
+  // NumTotalPurchases     :       8.0.
+  var confirBtn = document.getElementById("confirm")
+  confirBtn.onclick = function (){
+    var inps = document.getElementsByTagName("input");
+    var paras = [{data:[]}];
+    for(var i=0;i<inps.length;i++){
+      paras[0].data.push(inps[i].value);
+    }
+    (fetch("/predection_result?Paras="+JSON.stringify(paras))
+            .then(response => response.json())
+            .then(function (data) {
+              document.getElementById("Prediction_expense").textContent=data;
+              // Plotly.newPlot("kmeans_ana0", data[0]['data'],data[0]['layout']);
+              // Plotly.newPlot("kmeans_ana0", data[0]['data'],data[0]['layout']);
+              // Plotly.newPlot("kmeans_ana2", data[2]['data'],data[2]['layout']);
+            }
+            ))
+  }
+
+</script>
+
+{% endblock %}

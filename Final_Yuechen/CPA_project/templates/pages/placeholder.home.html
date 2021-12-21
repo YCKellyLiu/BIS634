@@ -1,0 +1,128 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Contents Overview</h1>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</br>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id = allcards>
+    <div class="card">
+        <h2 style="margin-bottom: 10px"> Problem Statement </h2>
+        <img src="/static/img/data_show.png" class="card-img-top" alt="..." height = "300", width = "600">
+        <div class="card-body">
+        <p class="card-text">Customer Personality Analysis is a detailed analysis of a company’s ideal customers. It helps a business to better understand its customers and makes it easier for them to modify products according to the specific needs, behaviors and concerns of different types of customers.</p>
+        <p class="card-text">Customer personality analysis helps a business to modify its product based on its target customers from different types of customer segments. For example, instead of spending money to market a new product to every customer in the company’s database, a company can analyze which customer segment is most likely to buy the product and then market the product only on that particular segment.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    </br>
+    <div class="card">
+        <div class="card-body">
+        <h2 style="margin-bottom: 10px"> Graphable Analysis Display </h2>
+        <div style="display: flex">
+        <img src="/static/img/box_plot_income.png" class="card-img-bottom" alt="..." height = "250", width = "300">
+        <img src="/static/img/box_plot_yearbirth.png" class="card-img-bottom" alt="..." height = "250", width = "300">
+        </div>
+        <img src="/static/img/corr.png" class="card-img-bottom" alt="..." height = "480", width = "600">
+        <a href= "/graphable" style="color:#000000"><h5 class="card-title">Data Analysis</h5></a>
+        <p class="card-text">Visualize the distribution of features of the data by means of suitable analysis.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    </br>
+    <div >
+        <h2 style="margin-bottom: 10px"> Related Methods </h2>
+    <div class="card">
+        <div class="card-body">
+        <img src="/static/img/pca.png" class="card-img-bottom" alt="..." height = "700", width = "700">
+        <a href= "/PCA" style="color:#000000">
+        <h5 class="card-title">PCA</h5></a>
+        <p class="card-text">With the increasing number of features in the clustering problem, the more difficult it is to process. Processing high-dimensional data will bring higher processing power and cost, as a result we can reduce the size before classification. Dimension reduction is the process of reducing the number of random variables by obtaining a set of fundamental variables. PCA is a effective method.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    </br>
+    <div class="card">
+    <div class="card-body">
+    <img src="/static/img/kmeans.png" class="card-img-bottom" alt="..." height = "400", width = "600">
+        <a href= "/Kmeans" style="color:#000000">
+        <h5 class="card-title">Kmeans</h5></a>
+        <p class="card-text">
+            Find the optimal number of clusters The number of clusters we select from a dataset cannot be random.
+            Each cluster is formed by calculating and comparing the distances of data points within a cluster to
+            its center.As a result, we calculate the Within-Cluster-Sum-of-Squares (WCSS) to find the right number
+            of clusters. WCSS is the sum of squares of the distances of each data point in all clusters to their
+            respective centers, and the goal is to minimize the sum. Assume there are n observations in a
+            dataset and we specify n number of clusters, which means k = n; so WCSS turns to 0 since data points
+            themselves become centers and the distance will be 0, in turn this will perform a perfect cluster;
+            but this is almost impossible as we have many clusters as the observations. Thus, we use Elbow point
+            graph to find the optimum value for K by fitting the model in a range of values of K. We randomly
+            initialize the K-Means algorithm for a range of K values and plot it against the WCSS for each K value.
+        </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    </div>
+    </br>
+    <div class="card">
+    <div class="card-body">
+        <img src="/static/img/fea_imps.png" class="card-img-bottom" alt="..." height = "333", width = "713">
+        <img src="/static/img/preds.png" class="card-img-bottom" alt="..." height = "317", width = "618">
+         <a href= "/Prediction" style="color:#000000">
+        <h5 class="card-title">Xgboost Prediction</h5></a>
+        <p class="card-text">Supervised training is performed using xgboost to predict the consumer spending level.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    </div>
+    </div>
+</div>>
+
+</br>
+</br>
+<style>
+    #allcards {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: rgb(73, 95, 221);
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+      background-color: #555;
+    }
+</style> 
+<script>
+    //Get the button:
+    mybutton = document.getElementById("myBtn");
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src = "/static/js/jquery-1.11.1.min.js"></script>
+
+<style>
+    .show:hover{background-color:blue}
+</style>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div>
+    <br/>
+    <br/><p class="lead show" id="pcaBtn">PCA Method</p>
+</div>
+<section>
+    <div id = "pcaplot">
+        <script>
+            var boxBtn = document.getElementById("pcaBtn");
+            boxBtn.onclick = function (){
+                (fetch("/pca")
+                    .then(response => response.json())
+                    .then(function (data) {
+                        Plotly.newPlot("pcaplot", data[0]['data'],data[0]['layout']);
+                    }))
+            }
+
+        </script>
+
+    </div>
+</section>
+<div>
+    <br/>
+    <br/><a class="lead show"  id="kmeansBtn">Kmeans Method</a>
+</div>
+
+<section>
+    <div id = "kmeans">
+        <script>
+            var kmeansBtn = document.getElementById("kmeansBtn");
+            kmeansBtn.onclick = function (){
+                (fetch("/kmeans")
+                    .then(response => response.json())
+                    .then(function (data) {
+                        Plotly.newPlot("kmeans", data[0]['data'],data[0]['layout']);
+                    }));
+                (fetch("/kmeans_results")
+                    .then(response => response.json())
+                    .then(function (data) {
+                        Plotly.newPlot("kmeans_ana0", data[0]['data'],data[0]['layout']);
+                        // Plotly.newPlot("kmeans_ana2", data[2]['data'],data[2]['layout']);
+                    }))
+            }
+        </script>
+    </div>
+</section>
+
+<div class="row">
+    <form>
+        <div class="col-xs-6">
+            <lable><b>Choose a "K" value for Kmeans method</br></b></label>
+                <select class="form-select" id = "k_value" name = "k_value" >
+                    <option selected>Select a "K" number</option>
+                    {% for each in Kvalue %}
+                    <option value="{{each}}" {% if each == "list_status" %} selected {% endif %}>{{each}}</option>
+                    {% endfor %}
+                </select>
+        </div><br/>
+    </form>
+</div>
+
+<section>
+    <div id = "kmeans_ana0" class="chart">
+    </div>
+    <div id = "kmeans_ana1">
+    </div>
+    <div id = "kmeans_ana2">
+    </div>
+</section>
+<br/>
+
+<br/>
+<style>
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: rgb(73, 95, 221);
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
+</style>
+
+<script src = "/static/js/jquery-1.11.1.min.js"></script>
+<script>
+
+    $('#k_value').on('change',function(){
+        var k_v = document.getElementById('k_value').value;
+        (fetch("/kmeans_results?k_value="+Number(k_v))
+            .then(response => response.json())
+            .then(function (data) {
+                // Plotly.newPlot("kmeans_ana0", data[0]['data'],data[0]['layout']);
+                Plotly.newPlot("kmeans_ana0", data[0]['data'],data[0]['layout']);
+                // Plotly.newPlot("kmeans_ana2", data[2]['data'],data[2]['layout']);
+            }))
+
+    })
+
+</script>
+<script>
+    //Get the button:
+    mybutton = document.getElementById("myBtn");
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
+
+{% endblock %}
